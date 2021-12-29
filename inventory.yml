@@ -1,0 +1,6 @@
+---
+
+ungrouped:
+  hosts:
+    sockciety:
+      ansible_host: sockciety.host.jacobkoziej.xyz
