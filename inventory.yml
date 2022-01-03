@@ -2,5 +2,7 @@
 
 ungrouped:
   hosts:
+    iceroth:
+      ansible_host: iceroth.host.jacobkoziej.xyz
     sockciety:
       ansible_host: sockciety.host.jacobkoziej.xyz
