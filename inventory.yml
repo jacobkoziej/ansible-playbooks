@@ -6,3 +6,5 @@ ungrouped:
       ansible_host: iceroth.host.jacobkoziej.xyz
     sockciety:
       ansible_host: sockciety.host.jacobkoziej.xyz
+    voyager-1:
+      ansible_host: voyager-1.host.jacobkoziej.xyz
