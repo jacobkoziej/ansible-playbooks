@@ -25,3 +25,7 @@ all:
         iceroth:
         sockciety:
         voyager_1:
+
+    server:
+      children:
+        sockciety:
