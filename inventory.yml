@@ -13,3 +13,9 @@ all:
     voyager_1:
       hosts:
         voyager-1.host.jacobkoziej.xyz
+
+
+    gentoo:
+      iceroth:
+      sockciety:
+      voyager_1:
