@@ -1,0 +1,11 @@
+---
+
+- name: 'set timezone to `{{ timezone }}`'
+  community.general.timezone:
+    name: '{{ timezone }}'
+
+- name: 'enable NTP daemon (`{{ ntp_daemon}}`)'
+  ansible.builtin.service:
+    enabled: true
+    name: '{{ ntp_daemon }}'
+    state: 'started'
