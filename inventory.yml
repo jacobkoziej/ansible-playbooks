@@ -15,6 +15,11 @@ all:
         voyager-1.host.jacobkoziej.xyz
 
 
+    client:
+      children:
+        iceroth:
+        voyager_1:
+
     gentoo:
       children:
         iceroth:
