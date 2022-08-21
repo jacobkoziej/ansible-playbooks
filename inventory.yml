@@ -1,10 +1,15 @@
 ---
 
-ungrouped:
-  hosts:
+all:
+  children:
     iceroth:
-      ansible_host: iceroth.host.jacobkoziej.xyz
+      hosts:
+        iceroth.host.jacobkoziej.xyz
+
     sockciety:
-      ansible_host: sockciety.host.jacobkoziej.xyz
-    voyager-1:
-      ansible_host: voyager-1.host.jacobkoziej.xyz
+      hosts:
+        sockciety.host.jacobkoziej.xyz
+
+    voyager_1:
+      hosts:
+        voyager-1.host.jacobkoziej.xyz
