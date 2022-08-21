@@ -1,0 +1,4 @@
+---
+
+container_image: 'containrrr/watchtower'
+container_name:  'watchtower'
