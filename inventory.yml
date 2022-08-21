@@ -16,6 +16,7 @@ all:
 
 
     gentoo:
-      iceroth:
-      sockciety:
-      voyager_1:
+      children:
+        iceroth:
+        sockciety:
+        voyager_1:
