@@ -1,0 +1,10 @@
+---
+
+- name: 'configure `{{ container_image }}`'
+  community.docker.docker_container:
+    name: '{{ container_name }}'
+    image: '{{ container_image }}'
+    pull: yes
+    restart_policy: 'unless-stopped'
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
