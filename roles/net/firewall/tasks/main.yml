@@ -1,0 +1,13 @@
+---
+
+- name: 'include OS-specific vars'
+  ansible.builtin.include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+      - '{{ ansible_distribution }}.yml'
+      skip: true
+
+- name: 'install `{{ package_nftables }}`'
+  ansible.builtin.package:
+    name: '{{ package_nftables }}'
+    state: 'present'
