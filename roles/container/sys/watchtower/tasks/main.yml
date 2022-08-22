@@ -1,6 +1,6 @@
 ---
 
-- name: 'configure `{{ container_image }}`'
+- name: 'ensure `{{ container_name }}` is running'
   community.docker.docker_container:
     name: '{{ container_name }}'
     image: '{{ container_image }}'
