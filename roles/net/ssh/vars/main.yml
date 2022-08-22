@@ -1,0 +1,9 @@
+---
+
+package_mosh:    'mosh'
+package_openssh: 'openssh'
+
+ssh_group: 'ssh'
+
+sshd:        'sshd'
+sshd_config: '/etc/ssh/sshd_config'
