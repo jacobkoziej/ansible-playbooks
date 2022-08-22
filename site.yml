@@ -4,6 +4,7 @@
   become: true
   roles:
     - 'net/firewall'
+    - 'net/ssh'
     - 'sys/time'
 
 - hosts: 'server'
