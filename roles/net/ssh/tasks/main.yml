@@ -1,0 +1,43 @@
+---
+
+- name: 'include OS-specific vars'
+  ansible.builtin.include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+      - '{{ ansible_distribution }}.yml'
+      skip: true
+
+- name: 'install OpenSSH'
+  ansible.builtin.package:
+    name: '{{ package_openssh }}'
+    state: 'present'
+
+- name: 'install Mosh'
+  ansible.builtin.package:
+    name: '{{ package_mosh }}'
+    state: 'present'
+
+- name: 'ensure `{{ ssh_group }}` group exists'
+  ansible.builtin.group:
+    name: '{{ ssh_group }}'
+
+- name: 'disable password authentication'
+  ansible.builtin.lineinfile:
+    line: 'PasswordAuthentication no'
+    path: '{{ sshd_config }}'
+    regexp: '^(#\s*PasswordAuthentication\s*(no|yes)|\s*PasswordAuthentication\s*yes)\s*$'
+  notify: 'restart sshd'
+
+- name: 'disable root login'
+  ansible.builtin.lineinfile:
+    line: 'PermitRootLogin no'
+    path: '{{ sshd_config }}'
+    regexp: '^(#\s*PermitRootLogin\s*(forced-commands-only|no|prohibit-password|yes)|\s*PermitRootLogin\s*(forced-commands-only|prohibit-password|yes))\s*$'
+  notify: 'restart sshd'
+
+- name: 'limit login to `{{ ssh_group }}` group'
+  ansible.builtin.lineinfile:
+    insertafter: 'PermitRootLogin no'
+    line: 'AllowGroups {{ ssh_group }}'
+    path: '{{ sshd_config }}'
+  notify: 'restart sshd'
