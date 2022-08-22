@@ -1,0 +1,4 @@
+---
+
+package_mosh:    'net-misc/mosh'
+package_openssh: 'net-misc/openssh'
