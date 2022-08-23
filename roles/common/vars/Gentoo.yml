@@ -1,0 +1,30 @@
+---
+
+# editors
+package_neovim: 'app-editors/neovim'
+package_vim:    'app-editors/vim'
+
+# goodies
+package_cowsay:    'games-misc/cowsay'
+package_fortune:   'games-misc/fortune-mod'
+
+# shells
+package_bash: 'app-shells/bash'
+package_zsh:  'app-shells/zsh'
+
+# utils
+package_bat:        'sys-apps/bat'
+package_exa:        'sys-apps/exa'
+package_fd:         'sys-apps/fd'
+package_fzf:        'app-shells/fzf'
+package_git:        'dev-vcs/git'
+package_git_lfs:    'dev-vcs/git-lfs'
+package_gnupg:      'app-crypt/gnupg'
+package_htop:       'sys-process/htop'
+package_man:        'sys-apps/man-db'
+package_man_pages:  'sys-apps/man-pages'
+package_ripgrep:    'sys-apps/ripgrep'
+package_shellcheck: 'dev-util/shellcheck'
+package_shfmt:      'dev-util/shfmt'
+package_tmux:       'app-misc/tmux'
+package_tree:       'app-text/tree'
