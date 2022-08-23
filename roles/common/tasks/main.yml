@@ -1,0 +1,32 @@
+---
+
+- name: 'include OS-specific vars'
+  ansible.builtin.include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+      - '{{ ansible_distribution }}.yml'
+      skip: true
+
+- name: 'install editors'
+  ansible.builtin.package:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ packages_editors }}'
+
+- name: 'install goodies'
+  ansible.builtin.package:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ packages_goodies }}'
+
+- name: 'install shells'
+  ansible.builtin.package:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ packages_shells }}'
+
+- name: 'install utils'
+  ansible.builtin.package:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ packages_utils }}'
