@@ -3,6 +3,7 @@
 - hosts: 'all'
   become: true
   roles:
+    - 'common'
     - 'net/firewall'
     - 'net/ssh'
     - 'sys/time'
