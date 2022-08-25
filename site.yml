@@ -4,6 +4,7 @@
   become: true
   roles:
     - 'common'
+    - 'container/docker'
     - 'net/firewall'
     - 'net/ssh'
     - 'sys/time'
