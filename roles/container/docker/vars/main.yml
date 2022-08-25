@@ -1,0 +1,7 @@
+---
+
+package_docker:         'docker'
+package_docker_compose: 'docker-compose'
+package_docker_py:      'docker-py'
+
+docker_daemon: 'docker'

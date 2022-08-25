@@ -1,0 +1,5 @@
+---
+
+package_docker:         'app-containers/docker'
+package_docker_compose: 'app-containers/docker-compose'
+package_docker_py:      'dev-python/docker-py'
