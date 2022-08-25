@@ -1,0 +1,29 @@
+---
+
+- name: 'include OS-specific vars'
+  ansible.builtin.include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+      - '{{ ansible_distribution }}.yml'
+      skip: true
+
+- name: 'install Docker'
+  ansible.builtin.package:
+    name: '{{ package_docker }}'
+    state: 'present'
+
+- name: 'install Docker Compose'
+  ansible.builtin.package:
+    name: '{{ package_docker_compose }}'
+    state: 'present'
+
+- name: 'install Docker SDK for Python'
+  ansible.builtin.package:
+    name: '{{ package_docker_py }}'
+    state: 'present'
+
+- name: 'enable Docker daemon'
+  ansible.builtin.service:
+    enabled: true
+    name: '{{ docker_daemon }}'
+    state: 'started'
