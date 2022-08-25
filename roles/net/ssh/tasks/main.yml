@@ -41,3 +41,9 @@
     line: 'AllowGroups {{ ssh_group }}'
     path: '{{ sshd_config }}'
   notify: 'restart sshd'
+
+- name: 'enable SSH daemon'
+  ansible.builtin.service:
+    enabled: true
+    name: '{{ sshd }}'
+    state: 'started'
